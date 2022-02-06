@@ -43,6 +43,32 @@ Para obtener un archivo CSV, descargaremos el repositorio, abriremos una termina
 Luego aguardamos, y una vez finalizado se generará un archivo `placas.csv` con toda la información dentro del mismo directorio.
 
 
+**Proveedores actualmente soportados:**
+VENEX
+CompraGamer
+
+**Proveedores a agregar en un futuro:**
+~~VENEX~~
+~~CompraGamer~~
+LOGG Hard Store
+FullH4rd
+Maximus Gaming Hardware
+
+
+## To-Do
+
+- [x] Unificar todos los proveedores en el mismo script (y exportar una lista conjunta)
+- [ ] Agregar hashrate de cada placa
+- [ ] Extraer el modelo exacto de cada placa en una columna independiente
+- [ ] Agregar valor de ROI basado en minería de Ethereum
+- [ ] Agregar consumo eléctrico estimado de cada placa
+- [x] Agregar VENEX
+- [x] Agregar CompraGamer
+- [ ] Agregar LOGG Hard Store
+- [ ] Agregar FullH4rd
+- [ ] Agregar Maximus Gaming Store
+
+
 ## License
 >You can check out the full license [here](https://github.com/PecceG2/GPU-Price-Extractor-Proveedores-Argentina/blob/master/LICENSE.md)
 
