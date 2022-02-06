@@ -10,7 +10,6 @@
 
   <p align="center">
     Extractor de precios de placas de video (GPU's) desde el sitio web de los principales proveedores de Argentina realizado en Python.
-	
     <br />
     <a href="https://github.com/PecceG2/"><strong>Ver todos mis proyectos »</strong></a>
     <br />
@@ -22,7 +21,6 @@
     <a href="https://github.com/PecceG2/GPU-Price-Extractor-Proveedores-Argentina/issues">Solicitar Mejora</a>
   </p>
 </p>
-
 
 
 **Requisitos previos**
