@@ -32,7 +32,6 @@
 
 3. Instalá las dependencias con `pip`:
     + `$ pip install -r requirements.txt`
-    + `$ stronghold`
 
 **Uso**
 ---
