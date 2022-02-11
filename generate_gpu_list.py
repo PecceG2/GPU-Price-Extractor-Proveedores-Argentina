@@ -36,7 +36,7 @@ def getChipBrand(productName):
         
     
 def getBrand(productName):
-    brands = ["palit", "msi", "gigabyte", "powercolor", "sapphire", "afox", "asrock", "pny", "gainward", "evga", "zotac", "xfx", "arktek", "asus", "coolermaster"]
+    brands = ["palit", "msi", "gigabyte", "powercolor", "sapphire", "afox", "asrock", "pny", "gainward", "evga", "zotac", "xfx", "arktek", "asus", "coolermaster", "inno3d"]
     if any(ext in productName.lower() for ext in brands):
         return [ext for ext in brands if(ext in productName.lower())][0]
     
