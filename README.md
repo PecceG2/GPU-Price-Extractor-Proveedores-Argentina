@@ -44,14 +44,22 @@ Luego aguardamos, y una vez finalizado se generará un archivo `placas.csv` con 
 
 **Proveedores actualmente soportados:**
 VENEX
+
 CompraGamer
+
 FullH4rd
+
+LOGG Hard Store
 
 **Proveedores a agregar en un futuro:**
 ~~VENEX~~
+
 ~~CompraGamer~~
+
 ~~FullH4rd~~
-LOGG Hard Store
+
+~~LOGG Hard Store~~
+
 Maximus Gaming Hardware
 
 
@@ -64,7 +72,7 @@ Maximus Gaming Hardware
 - [ ] Agregar consumo eléctrico estimado de cada placa
 - [x] Agregar VENEX
 - [x] Agregar CompraGamer
-- [ ] Agregar LOGG Hard Store
+- [x] Agregar LOGG Hard Store
 - [x] Agregar FullH4rd
 - [ ] Agregar Maximus Gaming Store
 
