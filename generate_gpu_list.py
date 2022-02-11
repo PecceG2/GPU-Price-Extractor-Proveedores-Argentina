@@ -12,6 +12,7 @@ websiteVENEX = 'https://www.venex.com.ar/componentes-de-pc/placas-de-video?vmm=1
 websiteCG1 = 'https://compragamer.com/?seccion=3&cate=6'
 websiteCG2 = 'https://compragamer.com/?seccion=3&cate=62'
 websiteFullH4rd = 'https://www.fullh4rd.com.ar/cat/supra/3/placas-de-video/'
+websiteLOGG = 'https://www.logg.com.ar/PRODUCTOS/PLACA-DE-VIDEO'
 driverPath = './chromedriver.exe'
 
 # Placas list
@@ -64,6 +65,7 @@ def addGPU(proveedor, chipBrand, productBrand, productName, LHR, productPrice, p
     individualGPU.append(productURL)
     individualGPU.append(productImageURL)
     listadoGPUs.append(individualGPU)
+    print("[" + proveedor + "] " + productName)
 
 def elementExistsByCSSSelector(driver, selector):
     try:
@@ -155,12 +157,37 @@ def getFullH4rd(webURL):
             
         closeWebDriver(driver)
 
+def getLOGG(webURL):
+
+    driver = getWebDriver()
+    driver.get(webURL)
+    time.sleep(6)
+    productos = driver.find_elements(By.CLASS_NAME, 'producto-box')
+
+    productosFullList = []
+    for producto in productos:
+    
+        # Selectors & parsers
+        productName = producto.find_element(By.CSS_SELECTOR, '.card-title a').get_attribute('innerHTML')
+        productURL = producto.find_element(By.CSS_SELECTOR, '.card-title a').get_attribute('href')
+        productPrice = producto.find_element(By.CLASS_NAME, 'card-price').text
+        productImageURL = producto.find_element(By.CSS_SELECTOR, '.card-header img').get_attribute('src')
+            
+        # Add
+        addGPU("LOGG Hardstore", getChipBrand(productName), getBrand(productName), productName, isLHR(productName), productPrice, productURL, productImageURL)
+        
+  
+    closeWebDriver(driver)
+    return productosFullList;
+
+
+
 # Run getters
 getVENEX(websiteVENEX)
 getCG(websiteCG1) #NVIDIA
 getCG(websiteCG2) #AMD
 getFullH4rd(websiteFullH4rd)
-
+getLOGG(websiteLOGG)
 
 # Export to CSV
 df = pd.DataFrame(listadoGPUs)
