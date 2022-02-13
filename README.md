@@ -43,25 +43,15 @@ Luego aguardamos, y una vez finalizado se generará un archivo `placas.csv` con 
 
 
 **Proveedores actualmente soportados:**
-VENEX
-
-CompraGamer
-
-FullH4rd
-
-LOGG Hard Store
+VENEX<br />
+CompraGamer<br />
+FullH4rd<br />
+LOGG Hard Store<br />
+Maximus Gaming Hardware<br />
+MEXX<br />
 
 **Proveedores a agregar en un futuro:**
-~~VENEX~~
-
-~~CompraGamer~~
-
-~~FullH4rd~~
-
-~~LOGG Hard Store~~
-
-Maximus Gaming Hardware
-
+Si se desea agregar un nuevo proveedor, por favor, crear un issue con el link del sitio web (Sólo se aceptarán proveedores conocidos y que puedan tener recomendaciones).
 
 ## To-Do
 
@@ -70,11 +60,6 @@ Maximus Gaming Hardware
 - [ ] Extraer el modelo exacto de cada placa en una columna independiente
 - [ ] Agregar valor de ROI basado en minería de Ethereum
 - [ ] Agregar consumo eléctrico estimado de cada placa
-- [x] Agregar VENEX
-- [x] Agregar CompraGamer
-- [x] Agregar LOGG Hard Store
-- [x] Agregar FullH4rd
-- [ ] Agregar Maximus Gaming Store
 
 
 ## License

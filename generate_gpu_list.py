@@ -15,6 +15,7 @@ websiteCG2 = 'https://compragamer.com/?seccion=3&cate=62'
 websiteFullH4rd = 'https://www.fullh4rd.com.ar/cat/supra/3/placas-de-video/'
 websiteLOGG = 'https://www.logg.com.ar/PRODUCTOS/PLACA-DE-VIDEO'
 websiteMaximus = 'https://www.maximus.com.ar/Productos/Placas-de-Video/CAT=48/OR=1/maximus.aspx'
+websiteMEXX = "https://www.mexx.com.ar/productos-rubro/placas-de-video/?precio=mayor&all=1"
 driverPath = './chromedriver.exe'
 
 # Placas list
@@ -229,14 +230,35 @@ def getMaximus(webURL):
             
     closeWebDriver(driver)
 
+def getMEXX(webURL):
+
+    driver = getWebDriver()
+    driver.get(webURL)
+    #driver.execute_script("function pageScroll() { window.scrollBy(0,50); scrolldelay = setTimeout(pageScroll,10); } pageScroll()") # Scroll al fondo para evitar el lazy loading
+    #time.sleep(6)
+    productos = driver.find_elements(By.CLASS_NAME, 'productos')
+
+    for producto in productos:
+    
+        # Selectors & parsers
+        productName = re.sub('Placa De Video ', '', producto.find_element(By.CSS_SELECTOR, '.card-title a').get_attribute('innerHTML'), flags=re.IGNORECASE)
+        productURL = producto.find_element(By.CSS_SELECTOR, '.card-title a').get_attribute('href')
+        productPrice = producto.find_element(By.CSS_SELECTOR, '.price h4 b').text
+        productImageURL = producto.find_element(By.CSS_SELECTOR, '.view.overlay a img.img-fluid').get_attribute('src')
+            
+        # Add
+        addGPU("MEXX", getChipBrand(productName), getBrand(productName), productName, isLHR(productName), productPrice, productURL, productImageURL)
+
+    closeWebDriver(driver)
 
 # Run getters
-getVENEX(websiteVENEX)
-getCG(websiteCG1) #NVIDIA
-getCG(websiteCG2) #AMD
-getFullH4rd(websiteFullH4rd)
-getLOGG(websiteLOGG)
-getMaximus(websiteMaximus)
+#getVENEX(websiteVENEX)
+#getCG(websiteCG1) #NVIDIA
+#getCG(websiteCG2) #AMD
+#getFullH4rd(websiteFullH4rd)
+#getLOGG(websiteLOGG)
+#getMaximus(websiteMaximus)
+getMEXX(websiteMEXX)
 
 
 # Export to CSV
