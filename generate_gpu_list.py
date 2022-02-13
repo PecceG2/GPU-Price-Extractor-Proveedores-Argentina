@@ -23,6 +23,10 @@ listadoGPUs = []
 
 
 # General Parse Functions
+#def getChipGPUModel()
+    # Checkear si es nvidia o AMD, si es nvidia -> checkear TI.
+    #dev = ["3060", "RTX3060", "RTX 3060"]
+
 def getChipBrand(productName):
     nvidia = ["nvidia", "geforce", "rtx", "gt7", "gtx", "quadro"]
     amd = ["amd", "radeon", "RX5", "RX6"]
@@ -252,12 +256,12 @@ def getMEXX(webURL):
     closeWebDriver(driver)
 
 # Run getters
-#getVENEX(websiteVENEX)
-#getCG(websiteCG1) #NVIDIA
-#getCG(websiteCG2) #AMD
-#getFullH4rd(websiteFullH4rd)
-#getLOGG(websiteLOGG)
-#getMaximus(websiteMaximus)
+getVENEX(websiteVENEX)
+getCG(websiteCG1) #NVIDIA
+getCG(websiteCG2) #AMD
+getFullH4rd(websiteFullH4rd)
+getLOGG(websiteLOGG)
+getMaximus(websiteMaximus)
 getMEXX(websiteMEXX)
 
 
